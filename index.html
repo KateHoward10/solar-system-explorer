@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Solar System Explorer</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        background-image: url(star.svg);
+      }
+      #background {
+        background-color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000" id="background"></svg>
+    <script type="text/javascript">
+      const background = document.getElementById('background');
+      for (let i = 0; i < 800; i++) {
+        const star = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        star.setAttributeNS(null, 'r', 1);
+        star.setAttributeNS(null, 'cx', Math.round(Math.random() * 10000));
+        star.setAttributeNS(null, 'cy', Math.round(Math.random() * 10000));
+        star.setAttributeNS(null, 'fill', '#FFF');
+        background.appendChild(star);
+      }
+    </script>
+  </body>
+</html>
