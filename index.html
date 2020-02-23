@@ -3,17 +3,31 @@
   <head>
     <title>Solar System Explorer</title>
     <style type="text/css">
+      @keyframes orbit {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
       body {
         margin: 0;
-        background-image: url(star.svg);
       }
       #background {
         background-color: #111;
       }
+      #mercury {
+        transform-origin: 5000px 5000px;
+        animation: orbit 60s linear infinite;
+      }
     </style>
   </head>
   <body>
-    <svg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000" id="background"></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000" id="background">
+      <circle id="sun" r="100" cx="5000" cy="5000" fill="gold" />
+      <circle id="mercury" r="20" cx="5200" cy="5200" fill="brown" />
+    </svg>
     <script type="text/javascript">
       const background = document.getElementById('background');
       for (let i = 0; i < 800; i++) {
